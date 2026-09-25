@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>오숀월드 기획안</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --babyblue:#AEE3F5;
+    --babyblue-deep:#6FB6DE;
+    --purple:#C7B6EA;
+    --purple-deep:#6C5CA6;
+    --bg:#F7F5FC;
+    --ink:#37325A;
+    --accent:#9B7EDE;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    line-height:1.7;
+  }
+  .hero{
+    background:linear-gradient(150deg, var(--babyblue) 0%, var(--purple) 100%);
+    color:#332F55;
+    padding:80px 24px 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{ max-width:760px; margin:0 auto; }
+  .eyebrow{ color:var(--purple-deep); font-size:14px; margin-bottom:14px; font-weight:700; }
+  h1{
+    font-family:'Jua', sans-serif;
+    font-size:clamp(40px, 8vw, 68px);
+    line-height:1.15;
+    margin-bottom:20px;
+    color:#3A3568;
+  }
+  .hero p{ font-size:17px; max-width:520px; color:#443F70; }
+  .wave{ display:block; width:100%; height:60px; margin-top:-1px; }
+  nav{
+    max-width:760px; margin:-40px auto 0; padding:0 24px;
+    display:flex; flex-wrap:wrap; gap:8px; position:relative; z-index:2;
+  }
+  nav a{
+    background:white; color:var(--purple-deep); text-decoration:none;
+    font-size:13px; font-weight:700; padding:8px 14px; border-radius:100px;
+    box-shadow:0 2px 10px rgba(108,92,166,0.15); white-space:nowrap;
+  }
+  main{ max-width:760px; margin:0 auto; padding:80px 24px 40px; }
+  section{ margin-bottom:72px; scroll-margin-top:24px; }
+  .num{
+    font-family:'Jua', sans-serif; color:var(--babyblue);
+    font-size:15px; display:inline-block; background:var(--purple-deep);
+    width:28px; height:28px; border-radius:50%; text-align:center;
+    line-height:28px; margin-right:10px;
+  }
+  h2{
+    font-family:'Jua', sans-serif; font-size:28px; color:var(--purple-deep);
+    display:flex; align-items:center; margin-bottom:20px; padding-bottom:14px;
+    border-bottom:2px solid rgba(108,92,166,0.15);
+  }
+  h3{ font-size:16px; font-weight:700; color:var(--babyblue-deep); margin:22px 0 8px; }
+  p{ font-size:15px; color:var(--ink); }
+  ul{ padding-left:20px; margin:6px 0; }
+  li{ font-size:15px; margin-bottom:4px; }
+  .card{
+    background:white; border-radius:16px; padding:22px 24px;
+    box-shadow:0 2px 14px rgba(108,92,166,0.10); margin-bottom:16px;
+  }
+  .placeholder{
+    border:2px dashed rgba(155,126,222,0.4); border-radius:16px;
+    padding:36px 20px; text-align:center; color:var(--purple-deep);
+    font-size:14px; background:rgba(174,227,245,0.18);
+  }
+  .tbd{
+    display:inline-block; background:rgba(155,126,222,0.15); color:var(--accent);
+    font-size:12px; font-weight:700; padding:3px 10px; border-radius:100px; margin-left:8px;
+  }
+  .flow{
+    background:var(--purple-deep); color:#F1ECFB; border-radius:16px;
+    padding:24px; font-size:14px; margin-top:14px;
+  }
+  .flow b{ color:var(--babyblue); }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .creator-card{
+    background:white; border-radius:16px; padding:18px; margin-bottom:16px;
+    box-shadow:0 2px 14px rgba(108,92,166,0.10);
+  }
+  .creator-card .imgslot{
+    border:2px dashed rgba(155,126,222,0.35); border-radius:12px;
+    height:110px; display:flex; align-items:center; justify-content:center;
+    color:var(--purple-deep); font-size:12px; background:rgba(199,182,234,0.12);
+    margin-bottom:10px;
+  }
+  .creator-card h4{ font-size:15px; color:var(--purple-deep); margin-bottom:2px; }
+  .creator-card .subs{ font-size:12px; color:var(--babyblue-deep); font-weight:700; margin-bottom:8px; }
+  .group-label{
+    font-size:13px; font-weight:700; color:var(--accent); margin:20px 0 10px;
+  }
+  .content-block{
+    background:white; border-radius:16px; padding:20px; margin-bottom:20px;
+    box-shadow:0 2px 14px rgba(108,92,166,0.10);
+  }
+  .content-block .imgslot{
+    border:2px dashed rgba(155,126,222,0.35); border-radius:12px;
+    height:150px; display:flex; align-items:center; justify-content:center;
+    color:var(--purple-deep); font-size:12px; background:rgba(174,227,245,0.15);
+    margin-bottom:12px;
+  }
+  .content-block h4{ font-size:15px; color:var(--purple-deep); margin-bottom:8px; }
+  .content-block .row{ font-size:13.5px; margin-bottom:4px; }
+  .content-block .row b{ color:var(--babyblue-deep); }
+  @media (max-width:600px){
+    .grid2{ grid-template-columns:1fr; }
+  }
+  footer{ text-align:center; padding:40px 24px 60px; color:var(--purple-deep); font-size:13px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">NCT WISH 팬 콘텐츠 기획안</div>
+    <h1>오숀월드</h1>
+    <p>대전 오션월드 × NCT WISH 시온의 팬 애칭 '오숀'. 시온을 중심으로 NCT WISH를 깊이 있게 다루는 팬 채널 기획안입니다.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32 C360,80 1080,-16 1440,32 L1440,60 L0,60 Z" fill="#F7F5FC"/></svg>
+</div>
+
+<nav>
+  <a href="#intro">1. 채널 소개</a>
+  <a href="#market">2. 산업 분석</a>
+  <a href="#bench">3. 벤치마킹</a>
+  <a href="#success">4. 성공 사례</a>
+  <a href="#content">5. 콘텐츠 기획</a>
+  <a href="#ops">6. 운영 계획</a>
+  <a href="#brand">7. 브랜딩</a>
+  <a href="#risk">8. 리스크·저작권</a>
+</nav>
+
+<main>
+
+  <section id="intro">
+    <h2><span class="num">1</span>채널 소개 및 컨셉</h2>
+    <h3>채널명의 의미</h3>
+    <p>대전의 유명 놀이공원 '오션월드'와 NCT WISH 리더 시온의 팬 애칭 '오숀'을 합쳐 만든 이름. 시온이 리더인 만큼, 시온을 중심축으로 NCT WISH 전체를 다루는 계정으로 정체성을 잡았습니다.</p>
+    <h3>기획 배경</h3>
+    <p>평소 NCT WISH의 팬으로서 다른 그룹보다 애정과 이해도가 깊어, 더 풍부하고 촘촘한 콘텐츠를 만들 수 있다고 판단했습니다.</p>
+    <h3>톤앤매너 / 차별화 포인트</h3>
+    <div class="placeholder">추후 고민 예정 <span class="tbd">TBD</span></div>
+  </section>
+
+  <section id="market">
+    <h2><span class="num">2</span>시장·산업 분석</h2>
+    <div class="card">
+      <h3>NCT WISH를 둘러싼 산업 구조</h3>
+      <ul><li>소속사 / 앨범·음원 / 팬 플랫폼 / 콘텐츠 클러스터</li></ul>
+    </div>
+    <div class="flow">
+      <b>NCT WISH 산업 수익</b> — 홍보 콘텐츠·활동 → 앨범·굿즈·공연·음원 소비 → SM/NCT WISH 수익<br><br>
+      <b>나의 콘텐츠 수익</b> — 콘텐츠 제작 → 조회수·팔로워 증가 → 광고·협찬 → 크리에이터 수익
+    </div>
+    <p style="margin-top:14px;">→ 팬덤 소비가 늘면 활동과 콘텐츠가 많아지고, 이를 바탕으로 새 콘텐츠를 제작해 신규 팬을 유입시키는 <b>선순환 구조</b>.</p>
+  </section>
+
+  <section id="bench">
+    <h2><span class="num">3</span>벤치마킹 크리에이터 분석</h2>
+
+    <div class="group-label">국내</div>
+    <div class="grid2">
+      <div class="creator-card">
+        <div class="imgslot">포켓위시 프로필 스크린샷 자리</div>
+        <h4>포켓위시</h4>
+        <div class="subs">구독자 2.45만명</div>
+        <p style="font-size:13px;">NCT WISH 자체 콘텐츠에서 팬들이 좋아할 만한 핵심 장면을 골라 상황에 맞게 재구성해 보여주는 채널</p>
+      </div>
+      <div class="creator-card">
+        <div class="imgslot">감자의 취미생활 프로필 스크린샷 자리</div>
+        <h4>감자의 취미생활</h4>
+        <div class="subs">구독자 1.39만명</div>
+        <p style="font-size:13px;">K-pop 숏폼 콘텐츠에 감자라는 캐릭터와 고유한 디자인 요소를 개성있게 적용해 재밌는 영상을 만드는 채널</p>
+      </div>
+      <div class="creator-card">
+        <div class="imgslot">소녀시대연구소 프로필 스크린샷 자리</div>
+        <h4>소녀시대연구소</h4>
+        <div class="subs">구독자 17.8만명</div>
+        <p style="font-size:13px;">소녀시대의 과거 및 최근 활동 영상을 활용해 새로운 콘텐츠로 재창조하는 채널</p>
+      </div>
+      <div class="creator-card">
+        <div class="imgslot">케이팝 아지트 프로필 스크린샷 자리</div>
+        <h4>케이팝 아지트 K-POP Azit</h4>
+        <div class="subs">구독자 29.9만명</div>
+        <p style="font-size:13px;">초록색을 대표 색상으로 정해 헌내피(현재 아이돌 팬)들이 공감하며 재밌게 활용하며 재밌는 편성을 만드는 채널</p>
+      </div>
+    </div>
+
+    <div class="group-label">국외</div>
+    <div class="grid2">
+      <div class="creator-card">
+        <div class="imgslot">jenjisliro 프로필 스크린샷 자리</div>
+        <h4>jenjisliro</h4>
+        <div class="subs">구독자 1.52만명</div>
+        <p style="font-size:13px;">해외에서 인기 많은 그룹을 중심으로 K-pop 콘텐츠를 심플한 디자인으로 보여주는 채널</p>
+      </div>
+      <div class="creator-card">
+        <div class="imgslot">Kpopserenityy 프로필 스크린샷 자리</div>
+        <h4>Kpopserenityy</h4>
+        <div class="subs">구독자 1.63만명</div>
+        <p style="font-size:13px;">심플한 디자인과 직관적이고 호기심을 유발하는 문구를 사용해 K-pop 팬들의 관심을 끄는 채널</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px;">니치 포인트</h3>
+    <div class="placeholder">우리 채널이 파고들 니치 포인트 정리 <span class="tbd">TBD</span></div>
+  </section>
+
+  <section id="success">
+    <h2><span class="num">4</span>성공 콘텐츠 사례 분석</h2>
+
+    <div class="content-block">
+      <div class="imgslot">[포켓위시] 인기 콘텐츠 캡처 자리 — 조회수 222만회</div>
+      <h4>포켓위시 · 조회수 222만회</h4>
+      <div class="row"><b>제목</b> · '워해'를 사투리로 전라도 VS 경상도 VS 일본</div>
+      <div class="row"><b>편집</b> · 미미미누 콘텐츠에서 료·재희·시온의 해당 부분만 가져와 핵심 장면 위주로 편집</div>
+      <div class="row"><b>활용</b> · SNS에서 사투리가 관심을 받는 흐름과 멤버들의 출신 지역 특징을 결합</div>
+    </div>
+
+    <div class="content-block">
+      <div class="imgslot">[감자의 취미생활] 가장 높은 조회수 캡처 자리 — 606만회</div>
+      <h4>감자의 취미생활 · 조회수 606만회</h4>
+      <div class="row"><b>제목</b> · '돌아와(요) 대(황)소연 가성비의 킹'</div>
+      <div class="row"><b>자막</b> · '너(는) 어디에~~'처럼 묵음 부분을 괄호로 표시</div>
+      <div class="row"><b>마무리 카피</b> · 그래도 다른 그룹 노래 커버할 때는 타협 없이 다 부르는 예의 편</div>
+    </div>
+
+    <div class="content-block">
+      <div class="imgslot">[jenjisliro] 가장 높은 조회수 캡처 자리 — 388만회</div>
+      <h4>jenjisliro · 조회수 388만회</h4>
+      <div class="row"><b>제목</b> · Score Suite of K-pop Demon Hunters</div>
+      <div class="row"><b>영상 자막</b> · "No wonder they made the Honmoon golden in one go......"라는 문구로 장면에 대한 반응을 표현</div>
+      <div class="row"><b>편집</b> · 유명 애니메이션 케이팝 데몬 헌터스의 화제 장면을 활용해 짧게 재가공</div>
+    </div>
+
+    <div class="content-block">
+      <div class="imgslot">[소녀시대연구소] 인기 콘텐츠 캡처 자리 — 조회수 1103만회</div>
+      <h4>소녀시대연구소 · 조회수 1103만회</h4>
+      <div class="row"><b>제목</b> · 소녀시대 뮤직비디오가 감동적인 이유</div>
+      <div class="row"><b>자막</b> · '화보 찍는 유리(배우 활동)', 'TV에 나오는 써니(예능·MC 활동)' 등 현재 활동을 자막으로 표현</div>
+      <div class="row"><b>마무리 카피</b> · "Forever 1 응원사이트에서 많이 놀러와주세요💜"와 링크를 남겨 응원 강요 유도</div>
+    </div>
+
+    <div class="content-block">
+      <div class="imgslot">[케이팝 아지트] 인기 콘텐츠 캡처 자리 — 조회수 81만회</div>
+      <h4>케이팝 아지트 · 조회수 81만회</h4>
+      <div class="row"><b>제목</b> · '그 시절로 회귀 버튼'</div>
+      <div class="row"><b>영상 자막</b> · '거를 타선 없는 SBS 드라마 레전드 황금기 시절'이라는 문구로 영상의 주제를 표시</div>
+      <div class="row"><b>구성</b> · 당시 유행한 4개의 드라마를 소개하며 드라마 표지·방영일·최고 시청률을 함께 표시</div>
+      <div class="row"><b>디자인</b> · 채널 고유의 상징 색을 자막과 디자인에 일관되게 활용</div>
+    </div>
+
+    <div class="content-block">
+      <div class="imgslot">[Kpopserenityy] 가장 높은 조회수 캡처 자리 — 388만회</div>
+      <h4>Kpopserenityy · 조회수 388만회</h4>
+      <div class="row"><b>제목</b> · K-pop idols who were caught lip syncing</div>
+      <div class="row"><b>자막</b> · 립싱크를 한 가수와 해당 가수가 부른 노래 제목을 표시하고, 'her backup dancer accidentally hit her mic' 등 상황을 설명하는 자막을 추가</div>
+      <div class="row"><b>마무리 카피</b> · 'Subscribe for more!'라는 문구로 구독 유도</div>
+    </div>
+
+    <h3>우리 채널에 적용할 요소</h3>
+    <div class="placeholder">위 사례에서 우리 채널에 적용할 요소 정리 <span class="tbd">TBD</span></div>
+  </section>
+
+  <section id="content">
+    <h2><span class="num">5</span>콘텐츠 기획</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>메인 콘텐츠</h3>
+        <ul>
+          <li>자체 콘텐츠 분석</li>
+          <li>컴백 전후 음색 비교 모음집</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>숏폼 전략</h3>
+        <p>위시의 매력을 짧고 간단하게 전달할 수 있는 포맷 중심 구성</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ops">
+    <h2><span class="num">6</span>채널 운영 계획</h2>
+    <div class="card">
+      <ul>
+        <li><b>플랫폼</b> : 유튜브</li>
+        <li><b>업로드 주기</b> : 주 2~3편 (자체 콘텐츠 공개·컴백 시기에는 업로드 빈도 확대)</li>
+        <li><b>성장 목표</b> : 구독자 1만 명 달성</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="brand">
+    <h2><span class="num">7</span>브랜딩·디자인</h2>
+    <div class="placeholder">로고 / 썸네일 톤 / 자막 스타일 추후 고민 예정 <span class="tbd">TBD</span></div>
+  </section>
+
+  <section id="risk">
+    <h2><span class="num">8</span>리스크 및 저작권 고려사항</h2>
+
+    <h3>저작권 관련</h3>
+    <ul>
+      <li>무대 직캠·방송 화면·음원 사용 시 Content ID로 수익 배분되거나 영상이 내려갈 수 있음</li>
+      <li>음원 전체를 배경에 까는 편집본은 리스크가 높음 → 짧은 클립·자막·분석 위주 구성 권장</li>
+      <li>2차적저작물도 원저작권자의 권리에는 영향을 주지 않음을 유의</li>
+    </ul>
+
+    <h3>수익화 관련</h3>
+    <ul>
+      <li>비영리 팬 활동은 대체로 용인되나, 굿즈 등 영리 판매는 별도 리스크</li>
+      <li>유튜브 광고 수익이 저작권자에게 자동 귀속될 수 있음</li>
+    </ul>
+
+    <h3>초상권·명예훼손 관련</h3>
+    <ul>
+      <li>사생활 추측성 콘텐츠 지양</li>
+      <li>팩트 체크 없는 소문·과장된 제목 자제</li>
+      <li>타 팬튜브 콘텐츠 무단 사용 금지, 출처 표기</li>
+    </ul>
+
+    <h3>공식 소통 관련</h3>
+    <ul>
+      <li>편집·분석을 더한 창작성 확보</li>
+      <li>'팬 계정 / 비공식' 표기 명확히</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>오숀월드 · NCT WISH 팬 콘텐츠 기획안</footer>
+
+</body>
+</html>
