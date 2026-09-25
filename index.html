@@ -4,120 +4,114 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>오숀월드 기획안</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
 <style>
   :root{
-    --babyblue:#AEE3F5;
-    --babyblue-deep:#6FB6DE;
-    --purple:#C7B6EA;
-    --purple-deep:#6C5CA6;
-    --bg:#F7F5FC;
-    --ink:#37325A;
-    --accent:#9B7EDE;
+    --ink:#26243D;
+    --sub:#75718F;
+    --line:#E4E0F3;
+    --accent:#7C6FE0;
+    --bg:#FFFFFF;
+    --panel:#F7F5FC;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
     background:var(--bg);
     color:var(--ink);
-    font-family:'Noto Sans KR', sans-serif;
+    font-family:'Pretendard Variable', Pretendard, -apple-system, sans-serif;
     line-height:1.7;
+    font-weight:400;
   }
   .hero{
-    background:linear-gradient(150deg, var(--babyblue) 0%, var(--purple) 100%);
-    color:#332F55;
-    padding:80px 24px 100px;
-    position:relative;
-    overflow:hidden;
+    padding:72px 24px 40px;
+    border-bottom:1px solid var(--line);
+    background:#DDEFFA;
   }
   .hero-inner{ max-width:760px; margin:0 auto; }
-  .eyebrow{ color:var(--purple-deep); font-size:14px; margin-bottom:14px; font-weight:700; }
+  .eyebrow{ color:var(--accent); font-size:13px; margin-bottom:12px; font-weight:600; }
   h1{
-    font-family:'Jua', sans-serif;
-    font-size:clamp(40px, 8vw, 68px);
-    line-height:1.15;
-    margin-bottom:20px;
-    color:#3A3568;
+    font-size:clamp(34px, 7vw, 52px);
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:16px;
+    letter-spacing:-0.01em;
   }
-  .hero p{ font-size:17px; max-width:520px; color:#443F70; }
-  .wave{ display:block; width:100%; height:60px; margin-top:-1px; }
+  .hero p{ font-size:15.5px; max-width:520px; color:var(--sub); }
   nav{
-    max-width:760px; margin:-40px auto 0; padding:0 24px;
-    display:flex; flex-wrap:wrap; gap:8px; position:relative; z-index:2;
+    max-width:760px; margin:0 auto; padding:0 24px;
+    display:flex; flex-wrap:nowrap; overflow-x:auto;
+    gap:0; border-bottom:1px solid var(--line);
+    -ms-overflow-style:none; scrollbar-width:none;
   }
+  nav::-webkit-scrollbar{ display:none; }
   nav a{
-    background:white; color:var(--purple-deep); text-decoration:none;
-    font-size:13px; font-weight:700; padding:8px 14px; border-radius:100px;
-    box-shadow:0 2px 10px rgba(108,92,166,0.15); white-space:nowrap;
+    color:var(--sub); text-decoration:none;
+    font-size:12.5px; font-weight:600; padding:14px 10px;
+    white-space:nowrap; border-bottom:2px solid transparent;
   }
-  main{ max-width:760px; margin:0 auto; padding:80px 24px 40px; }
-  section{ margin-bottom:72px; scroll-margin-top:24px; }
-  .num{
-    font-family:'Jua', sans-serif; color:var(--babyblue);
-    font-size:15px; display:inline-block; background:var(--purple-deep);
-    width:28px; height:28px; border-radius:50%; text-align:center;
-    line-height:28px; margin-right:10px;
-  }
+  nav a:hover{ color:var(--ink); border-bottom:2px solid var(--accent); }
+  main{ max-width:760px; margin:0 auto; padding:56px 24px 40px; }
+  section{ margin-bottom:56px; scroll-margin-top:20px; }
   h2{
-    font-family:'Jua', sans-serif; font-size:28px; color:var(--purple-deep);
-    display:flex; align-items:center; margin-bottom:20px; padding-bottom:14px;
-    border-bottom:2px solid rgba(108,92,166,0.15);
+    font-size:22px; font-weight:700; color:var(--ink);
+    margin-bottom:18px;
   }
-  h3{ font-size:16px; font-weight:700; color:var(--babyblue-deep); margin:22px 0 8px; }
-  p{ font-size:15px; color:var(--ink); }
-  ul{ padding-left:20px; margin:6px 0; }
-  li{ font-size:15px; margin-bottom:4px; }
+  h2 .num{ color:var(--ink); margin-right:6px; }
+  h3{ font-size:14.5px; font-weight:700; color:var(--ink); margin:20px 0 8px; }
+  p{ font-size:14.5px; color:var(--sub); }
+  ul{ padding-left:18px; margin:6px 0; }
+  li{ font-size:14.5px; margin-bottom:5px; color:var(--sub); }
+  b{ color:var(--ink); font-weight:700; }
   .card{
-    background:white; border-radius:16px; padding:22px 24px;
-    box-shadow:0 2px 14px rgba(108,92,166,0.10); margin-bottom:16px;
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:18px 20px; margin-bottom:14px;
   }
   .placeholder{
-    border:2px dashed rgba(155,126,222,0.4); border-radius:16px;
-    padding:36px 20px; text-align:center; color:var(--purple-deep);
-    font-size:14px; background:rgba(174,227,245,0.18);
+    border:1px dashed var(--line); border-radius:10px;
+    padding:28px 16px; text-align:center; color:var(--sub);
+    font-size:13px; background:var(--panel);
   }
   .tbd{
-    display:inline-block; background:rgba(155,126,222,0.15); color:var(--accent);
-    font-size:12px; font-weight:700; padding:3px 10px; border-radius:100px; margin-left:8px;
+    display:inline-block; color:var(--accent);
+    font-size:11.5px; font-weight:700; margin-left:6px;
   }
   .flow{
-    background:var(--purple-deep); color:#F1ECFB; border-radius:16px;
-    padding:24px; font-size:14px; margin-top:14px;
+    background:var(--ink); color:#EDEBFA; border-radius:10px;
+    padding:20px; font-size:13.5px; margin-top:12px;
   }
-  .flow b{ color:var(--babyblue); }
-  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .flow b{ color:#B9AEF5; }
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   .creator-card{
-    background:white; border-radius:16px; padding:18px; margin-bottom:16px;
-    box-shadow:0 2px 14px rgba(108,92,166,0.10);
+    background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:14px;
   }
   .creator-card .imgslot{
-    border:2px dashed rgba(155,126,222,0.35); border-radius:12px;
-    height:110px; display:flex; align-items:center; justify-content:center;
-    color:var(--purple-deep); font-size:12px; background:rgba(199,182,234,0.12);
+    border:1px dashed #CFC7EE; border-radius:8px;
+    height:100px; display:flex; align-items:center; justify-content:center;
+    color:var(--sub); font-size:11.5px; background:#FBFAFF;
     margin-bottom:10px;
   }
-  .creator-card h4{ font-size:15px; color:var(--purple-deep); margin-bottom:2px; }
-  .creator-card .subs{ font-size:12px; color:var(--babyblue-deep); font-weight:700; margin-bottom:8px; }
+  .creator-card h4{ font-size:14px; font-weight:700; margin-bottom:2px; }
+  .creator-card .subs{ font-size:11.5px; color:var(--accent); font-weight:700; margin-bottom:8px; }
+  .creator-card p{ font-size:12.5px; }
   .group-label{
-    font-size:13px; font-weight:700; color:var(--accent); margin:20px 0 10px;
+    font-size:12px; font-weight:700; color:var(--accent); margin:18px 0 10px; text-transform:uppercase; letter-spacing:0.03em;
   }
   .content-block{
-    background:white; border-radius:16px; padding:20px; margin-bottom:20px;
-    box-shadow:0 2px 14px rgba(108,92,166,0.10);
+    background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px; margin-bottom:16px;
   }
   .content-block .imgslot{
-    border:2px dashed rgba(155,126,222,0.35); border-radius:12px;
-    height:150px; display:flex; align-items:center; justify-content:center;
-    color:var(--purple-deep); font-size:12px; background:rgba(174,227,245,0.15);
+    border:1px dashed #CFC7EE; border-radius:8px;
+    height:140px; display:flex; align-items:center; justify-content:center;
+    color:var(--sub); font-size:11.5px; background:#FBFAFF;
     margin-bottom:12px;
   }
-  .content-block h4{ font-size:15px; color:var(--purple-deep); margin-bottom:8px; }
-  .content-block .row{ font-size:13.5px; margin-bottom:4px; }
-  .content-block .row b{ color:var(--babyblue-deep); }
+  .content-block h4{ font-size:14px; font-weight:700; margin-bottom:8px; }
+  .content-block .row{ font-size:13px; margin-bottom:4px; color:var(--sub); }
+  .content-block .row b{ color:var(--ink); }
   @media (max-width:600px){
     .grid2{ grid-template-columns:1fr; }
   }
-  footer{ text-align:center; padding:40px 24px 60px; color:var(--purple-deep); font-size:13px; }
+  footer{ text-align:center; padding:32px 24px 56px; color:var(--sub); font-size:12px; border-top:1px solid var(--line); }
 </style>
 </head>
 <body>
@@ -128,7 +122,6 @@
     <h1>오숀월드</h1>
     <p>대전 오션월드 × NCT WISH 시온의 팬 애칭 '오숀'. 시온을 중심으로 NCT WISH를 깊이 있게 다루는 팬 채널 기획안입니다.</p>
   </div>
-  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32 C360,80 1080,-16 1440,32 L1440,60 L0,60 Z" fill="#F7F5FC"/></svg>
 </div>
 
 <nav>
@@ -145,17 +138,17 @@
 <main>
 
   <section id="intro">
-    <h2><span class="num">1</span>채널 소개 및 컨셉</h2>
+    <h2><span class="num">1.</span>채널 소개 및 컨셉</h2>
     <h3>채널명의 의미</h3>
-    <p>대전의 유명 놀이공원 '오션월드'와 NCT WISH 리더 시온의 팬 애칭 '오숀'을 합쳐 만든 이름. 시온이 리더인 만큼, 시온을 중심축으로 NCT WISH 전체를 다루는 계정으로 정체성을 잡았습니다.</p>
+    <p>대전의 유명 놀이공원 <b>'오션월드'</b>와 NCT WISH 리더 시온의 팬 애칭 <b>'오숀'</b>을 합쳐 만든 이름. 시온이 리더인 만큼, 시온을 중심축으로 NCT WISH 전체를 다루는 계정으로 정체성을 잡았습니다.</p>
     <h3>기획 배경</h3>
     <p>평소 NCT WISH의 팬으로서 다른 그룹보다 애정과 이해도가 깊어, 더 풍부하고 촘촘한 콘텐츠를 만들 수 있다고 판단했습니다.</p>
     <h3>톤앤매너 / 차별화 포인트</h3>
-    <div class="placeholder">추후 고민 예정 <span class="tbd">TBD</span></div>
+    <div class="placeholder">추후 고민 예정<span class="tbd">TBD</span></div>
   </section>
 
   <section id="market">
-    <h2><span class="num">2</span>시장·산업 분석</h2>
+    <h2><span class="num">2.</span>시장·산업 분석</h2>
     <div class="card">
       <h3>NCT WISH를 둘러싼 산업 구조</h3>
       <ul><li>소속사 / 앨범·음원 / 팬 플랫폼 / 콘텐츠 클러스터</li></ul>
@@ -164,11 +157,11 @@
       <b>NCT WISH 산업 수익</b> — 홍보 콘텐츠·활동 → 앨범·굿즈·공연·음원 소비 → SM/NCT WISH 수익<br><br>
       <b>나의 콘텐츠 수익</b> — 콘텐츠 제작 → 조회수·팔로워 증가 → 광고·협찬 → 크리에이터 수익
     </div>
-    <p style="margin-top:14px;">→ 팬덤 소비가 늘면 활동과 콘텐츠가 많아지고, 이를 바탕으로 새 콘텐츠를 제작해 신규 팬을 유입시키는 <b>선순환 구조</b>.</p>
+    <p style="margin-top:12px;">→ 팬덤 소비가 늘면 활동과 콘텐츠가 많아지고, 이를 바탕으로 새 콘텐츠를 제작해 신규 팬을 유입시키는 <b>선순환 구조</b>.</p>
   </section>
 
   <section id="bench">
-    <h2><span class="num">3</span>벤치마킹 크리에이터 분석</h2>
+    <h2><span class="num">3.</span>벤치마킹 크리에이터 분석</h2>
 
     <div class="group-label">국내</div>
     <div class="grid2">
@@ -176,25 +169,25 @@
         <div class="imgslot">포켓위시 프로필 스크린샷 자리</div>
         <h4>포켓위시</h4>
         <div class="subs">구독자 2.45만명</div>
-        <p style="font-size:13px;">NCT WISH 자체 콘텐츠에서 팬들이 좋아할 만한 핵심 장면을 골라 상황에 맞게 재구성해 보여주는 채널</p>
+        <p>NCT WISH 자체 콘텐츠에서 팬들이 좋아할 만한 핵심 장면을 골라 상황에 맞게 재구성해 보여주는 채널</p>
       </div>
       <div class="creator-card">
         <div class="imgslot">감자의 취미생활 프로필 스크린샷 자리</div>
         <h4>감자의 취미생활</h4>
         <div class="subs">구독자 1.39만명</div>
-        <p style="font-size:13px;">K-pop 숏폼 콘텐츠에 감자라는 캐릭터와 고유한 디자인 요소를 개성있게 적용해 재밌는 영상을 만드는 채널</p>
+        <p>K-pop 숏폼 콘텐츠에 감자라는 캐릭터와 고유한 디자인 요소를 개성있게 적용해 재밌는 영상을 만드는 채널</p>
       </div>
       <div class="creator-card">
         <div class="imgslot">소녀시대연구소 프로필 스크린샷 자리</div>
         <h4>소녀시대연구소</h4>
         <div class="subs">구독자 17.8만명</div>
-        <p style="font-size:13px;">소녀시대의 과거 및 최근 활동 영상을 활용해 새로운 콘텐츠로 재창조하는 채널</p>
+        <p>소녀시대의 과거 및 최근 활동 영상을 활용해 새로운 콘텐츠로 재창조하는 채널</p>
       </div>
       <div class="creator-card">
         <div class="imgslot">케이팝 아지트 프로필 스크린샷 자리</div>
         <h4>케이팝 아지트 K-POP Azit</h4>
         <div class="subs">구독자 29.9만명</div>
-        <p style="font-size:13px;">초록색을 대표 색상으로 정해 헌내피(현재 아이돌 팬)들이 공감하며 재밌게 활용하며 재밌는 편성을 만드는 채널</p>
+        <p>초록색을 대표 색상으로 정해 헌내피(현재 아이돌 팬)들이 공감하며 재밌게 활용하는 채널</p>
       </div>
     </div>
 
@@ -204,22 +197,22 @@
         <div class="imgslot">jenjisliro 프로필 스크린샷 자리</div>
         <h4>jenjisliro</h4>
         <div class="subs">구독자 1.52만명</div>
-        <p style="font-size:13px;">해외에서 인기 많은 그룹을 중심으로 K-pop 콘텐츠를 심플한 디자인으로 보여주는 채널</p>
+        <p>해외에서 인기 많은 그룹을 중심으로 K-pop 콘텐츠를 심플한 디자인으로 보여주는 채널</p>
       </div>
       <div class="creator-card">
         <div class="imgslot">Kpopserenityy 프로필 스크린샷 자리</div>
         <h4>Kpopserenityy</h4>
         <div class="subs">구독자 1.63만명</div>
-        <p style="font-size:13px;">심플한 디자인과 직관적이고 호기심을 유발하는 문구를 사용해 K-pop 팬들의 관심을 끄는 채널</p>
+        <p>심플한 디자인과 직관적이고 호기심을 유발하는 문구를 사용해 K-pop 팬들의 관심을 끄는 채널</p>
       </div>
     </div>
 
-    <h3 style="margin-top:24px;">니치 포인트</h3>
-    <div class="placeholder">우리 채널이 파고들 니치 포인트 정리 <span class="tbd">TBD</span></div>
+    <h3>니치 포인트</h3>
+    <div class="placeholder">우리 채널이 파고들 니치 포인트 정리<span class="tbd">TBD</span></div>
   </section>
 
   <section id="success">
-    <h2><span class="num">4</span>성공 콘텐츠 사례 분석</h2>
+    <h2><span class="num">4.</span>성공 콘텐츠 사례 분석</h2>
 
     <div class="content-block">
       <div class="imgslot">[포켓위시] 인기 콘텐츠 캡처 자리 — 조회수 222만회</div>
@@ -271,11 +264,11 @@
     </div>
 
     <h3>우리 채널에 적용할 요소</h3>
-    <div class="placeholder">위 사례에서 우리 채널에 적용할 요소 정리 <span class="tbd">TBD</span></div>
+    <div class="placeholder">위 사례에서 우리 채널에 적용할 요소 정리<span class="tbd">TBD</span></div>
   </section>
 
   <section id="content">
-    <h2><span class="num">5</span>콘텐츠 기획</h2>
+    <h2><span class="num">5.</span>콘텐츠 기획</h2>
     <div class="grid2">
       <div class="card">
         <h3>메인 콘텐츠</h3>
@@ -292,7 +285,7 @@
   </section>
 
   <section id="ops">
-    <h2><span class="num">6</span>채널 운영 계획</h2>
+    <h2><span class="num">6.</span>채널 운영 계획</h2>
     <div class="card">
       <ul>
         <li><b>플랫폼</b> : 유튜브</li>
@@ -303,12 +296,12 @@
   </section>
 
   <section id="brand">
-    <h2><span class="num">7</span>브랜딩·디자인</h2>
-    <div class="placeholder">로고 / 썸네일 톤 / 자막 스타일 추후 고민 예정 <span class="tbd">TBD</span></div>
+    <h2><span class="num">7.</span>브랜딩·디자인</h2>
+    <div class="placeholder">로고 / 썸네일 톤 / 자막 스타일 추후 고민 예정<span class="tbd">TBD</span></div>
   </section>
 
   <section id="risk">
-    <h2><span class="num">8</span>리스크 및 저작권 고려사항</h2>
+    <h2><span class="num">8.</span>리스크 및 저작권 고려사항</h2>
 
     <h3>저작권 관련</h3>
     <ul>
